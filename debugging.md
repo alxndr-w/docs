@@ -38,9 +38,7 @@ Wenn ein Administrator eingeloggt ist, oder der Administrator den Debug-Modus ak
 
 > Tritt ein Fehler auf, meldet REDAXO sich im Frontend mit einem Ooops und im Backend mit einem Rrrrroar.
 
-![Whoops](/assets/v5.10.0-debug_whooops.png)
-
-> Whoops-Fehlerseite mit Debug-Informationen
+![Whoops](/assets/v5.10.0-debug_whooops.png) Whoops-Fehlerseite mit Debug-Informationen
 
 Die Whoops-Meldung liefert die Codestellen und Fehlermeldungen zum aufgetretnenen Fehler. Die Infos können zudem kopiert werden. 
 
@@ -64,6 +62,11 @@ In der Datei `redaxo/data/core/system.log` werden Fehler geloggt - möglicherwei
 Ergebnis einer dump()-Ausgabe
 
 Anstelle von `var_dump()` kann im REDAXO-Kontext die Funktion `dump()` verwendet werden, um die Ausgabe einer Variablen, eines Objekts oder eines anderen Datentyps im Frontend auszugeben. Der Vorteil besteht darin, dass die Ausgabe HTML-formatiert ist und dadurch schneller erfasst und durchsucht werden kann.
+
+### Suchen in einem Dump: 
+
+Wenn der ausgewertete Inhalt komplex ist, sollte man das lokale Suchfeld verwenden, um nach bestimmten Variablen oder Werten zu suchen. Hierzu klickt man auf eine beliebige Stelle im Dump-Inhalt und drückt dann `Strg. + F` oder `Cmd. + F`, damit das lokale Suchfeld erscheint. Alle gängigen Tastenkombinationen zur Navigation in den Suchergebnissen werden unterstützt (Strg + G oder Cmd + G, F3 usw.) Nach Abschluss der Suche lässt sich das Feld mit Esc wieder ausblenden.
+
 
 <a name="debugmode"></a>
 
@@ -106,9 +109,7 @@ Das Debug-AddOn kann zusätzlich installiert werden kann und anschließend im Fr
 
 > Das Debug-AddOn sollte nicht in Produktivumgebungen eingesetzt werden, weil hierfür der Debug-Modus im System aktiviert sein muss. Bei Multidomain-Umgebungen sollte man sich mit der gewünschten Domain im Backend einloggen, damit es unter der jeweiligen Domain eingesetzt werden kann.
 
-![Debug-AddOn ab REDAXO 5.11](/assets/v5.11.0-debug_addon.png)
-
-Serverseitige Abläufe visualisiert durch Clockwork
+![Debug-AddOn ab REDAXO 5.11](/assets/v5.11.0-debug_addon.png) Serverseitige Abläufe visualisiert durch Clockwork
 
 Um eigene Messungen vornehmen zu können, kann die rex_timer-Klasse verwendet werden und den eigenen Code dazwischen einfügen:
 

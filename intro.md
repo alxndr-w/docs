@@ -1,4 +1,4 @@
-# Dokumentation REDAXO 5.13
+# Dokumentation REDAXO 5.15
 
 Die REDAXO-Dokumentation ist der Startpunkt für die Installation und Redaktion einer REDAXO-Webpräsenz. Zudem finden Developer hier auch die erforderlichen Informationen zur Entwicklung eigener Lösungen.
 
@@ -11,34 +11,25 @@ Die REDAXO-Dokumentation ist der Startpunkt für die Installation und Redaktion 
 
 ## Neues in dieser Doku
 
-![Login-Seite](/assets/v5.13.0-login.png)
+![Login-Seite](/assets/v5.15.0-login.png)
 
-### Themes: Der neue Dark Mode
-
-- **Benutzer:** Auswahl des Themes auf der [Profilseite](/{{path}}/{{version}}/profil)
-- **Administratoren:** Theme für alle Nutzer vorgeben in der [config.yml](/{{path}}/{{version}}/configyml)
-- **AddOn-Entwicklung:** Styling für Themes mittels [CSS, Sass oder Less](/{{path}}/{{version}}/addon-assets#themes) 
-
-### REX_-Slice-Variablen per PHP verarbeiten. 
-
-Es ist jetzt möglich SLICE-Variablen per PHP auszulesen. 
-
-[Auslesen der Werte via PHP](/{{path}}/{{version}}/redaxo-variablen#viaphp) 
+- REDAXO unterstützt den Login per passkey. Die Einrichtung erfolgt auf der [Profilseite.](/{{path}}/{{version}}/profil)
+- Dumps können jetzt auch durchsucht werden, siehe [Debugging.](/{{path}}/{{version}}/debugging)
 
 
 ## Übersicht der Kategorien
 
 **Einleitung**
 
-Grundlegende Informationenen zur aktuellen Version, Aktualisierung, API
+Grundlegende Informationen zur aktuellen Version, Aktualisierung, API
 
-**Setup**
+**Setup und Administration**
 
 Installationsanleitung, erster Login, Passwort-Wiederherstellung
 
-**Anwendung**
+**Anwender**
 
-Der Bereich zur Anwendung ist primär an Redakteurinnen und Redakteure gerichtet. Hier wird die Bedienung des Systems erläutert.  
+Der Bereich für Anwender ist primär an Redakteurinnen und Redakteure gerichtet. Hier wird die Bedienung des Systems erläutert.
 
 **Basis**
 
@@ -48,7 +39,11 @@ Grundlegende technische Informationen zum Aufbau einer REDAXO-Webpräsenz
 
 Informationen für Developer
 
-**AddOns**
+**Weitere System AddOns / PlugIns**
+
+Informationen zu System Addons
+
+**AddOn-Entwicklung**
 
 Entwicklung und Bereitstellung eigener AddOns
 

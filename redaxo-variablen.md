@@ -25,6 +25,8 @@
   + [REX_TEMPLATE_KEY](#rex-template-key)
   + [REX_USER_ID](#rex-user-id)
   + [REX_USER_LOGIN](#rex-user-login)
+* [Verschachtelte Variablen](#verschachtelung)
+* [Callback](#callback)
 * [Eigene Variablen](#eigene-variablen)
 
 <a name="einführung"></a>
@@ -77,6 +79,10 @@ Allen REDAXO-Variablen, die Parameter akzeptieren (erkennbar den den eckigen Kla
 | `suffix=xyz` | Erlaubt zusätzliche Ausgaben nach der Variable.                                                                                       |
 | `instead=xyz` | Der Inhalt `xyz` wird statt der Variable ausgegeben, wenn diese nicht leer ist.                                                       |
 | `ifempty=xyz` | Der Inhalt `xyz` wird ausgegeben, wenn die Variable leer ist.                                                                         |
+
+An die Parameter können auch weitere Variablen übergeben werden. Somit ist eine [Verschachtelung](#verschachtelung) möglich. 
+Darüber hinaus können auch eigene Parameter übergeben werden, die über einen [Callback](#callback) verarbeitet werden können. 
+
 
 <a name="ein-ausgabe-variablen"></a>
 
@@ -374,7 +380,7 @@ echo $value1['text2'];
 <a name="viaphp"></a>
 ### Auslesen der Werte via PHP
 
-Die Slice-Values können auch per PHP ausgelsen und verarbeitet werden. 
+Die Slice-Values können auch per PHP ausgelesen und verarbeitet werden. 
 
 ```php
 // Holt das aktuelle Slice-Objekt
@@ -435,8 +441,8 @@ REX_ARTICLE[id=i field=xyz clang=i]
 **Beispiel**
 
 ```html
-// Artikel 5 in Sprache 2 abrufen
-REX_ARTICLE[id=5 ctype=2]
+// Spalte 1 von Artikel 5 in Sprache 2 abrufen
+REX_ARTICLE[id=5 clang=2 ctype=1]
 ```
 
 <a name="rex-article-id"></a>
@@ -579,15 +585,7 @@ REX_CTYPE_ID
 
 ### REX_MODULE_ID
 
-Liefert die ID des aktiven Moduls. Es sind keine Parameter erforderlich. Ist nur innerhalb von Modulen verfügbar.
-
-**Hinweis:** Wird vom `structure` -Plugin `content` bereitgestellt.
-
-<a name="rex-module-key"></a>
-
-### REX_MODULE_KEY
-
-Liefert den key des aktiven Moduls. Es sind keine Parameter erforderlich. Ist nur innerhalb von Modulen verfügbar.
+Liefert die ID des aktiven Moduls. Es sind keine Parameter erforderlich und es ist nur innerhalb von Modulen verfügbar.
 
 **Hinweis:** Wird vom `structure` -Plugin `content` bereitgestellt.
 
@@ -595,6 +593,20 @@ Liefert den key des aktiven Moduls. Es sind keine Parameter erforderlich. Ist nu
 
 ``` 
 REX_MODULE_ID
+```
+
+<a name="rex-module-key"></a>
+
+### REX_MODULE_KEY
+
+Liefert den Key des aktiven Moduls. Es sind keine Parameter erforderlich und es ist nur innerhalb von Modulen verfügbar.
+
+**Hinweis:** Wird vom `structure` -Plugin `content` bereitgestellt.
+
+#### Syntax
+
+``` 
+REX_MODULE_KEY
 ```
 
 <a name="rex-property"></a>
@@ -714,6 +726,51 @@ Shortcut für `rex::getUser()->getLogin()` .
 ``` 
 REX_USER_LOGIN
 ```
+
+
+<a name="verschachtelung"></a>
+
+## Verschachtelte Variablen
+
+Variablen können ineinander verschachtelt werden. Dabei übergibt man den Parametern einer Variable weitere Variablen. 
+
+Beispiel: 
+
+```
+REX_VALUE[prefix=<REX_VALUE[2]> id=1 suffix=</REX_VALUE[2]> ifempty=REX_ARTICLE[field=name]] 
+```
+Hier wird eine Überschrift generiert. Falls kein Inhalt für den Value 1 übergeben wurde, wird stattdessen der Artikelname genommen. 
+
+
+<a name="callback"></a>
+
+## Augabe der Variablen per Callback verarbeiten 
+
+Der Variableninhalt wird an eine PHP-Funktion oder Class-Methode `xyz` übergeben, durch die der Variableninhalt vor der Ausgabe manipuliert werden kann.
+
+### Beispiel:
+
+PHP Class
+
+```php
+class var_info
+{
+ public static function getInfo($data)
+    {
+        return dump($data);
+    }
+}
+```
+
+Aufruf im Modul
+
+```
+REX_VALUE[id=1 callback="var_info::getInfo"  customparameter="foo"] 
+```
+
+Die Callback-Methode `getInfo` nimmt alle Inhalte und Parameter als Array der Variable auf. Hier auch den selbst kreierten customparameter. Es wird hier ein Dump ausgegen. 
+
+
 
 <a name="eigene-variablen"></a>
 

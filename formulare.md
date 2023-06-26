@@ -15,6 +15,7 @@
     - [addHiddenField](#addhiddenfield)
     - [addCheckboxField](#addcheckboxfield)
     - [addRadioField](#addradiofield)
+    - [addTextField](#addtextfield)
     - [addTextAreaField](#addtextareafield)
     - [addSelectField](#addselectfield)
     - [addPrioField](#addpriofield)
@@ -186,13 +187,6 @@ $select->addOptions([36,37,38,39,40,41,42,43,44,45,46,47,48], true);
 
 Fügt dem Formular ein Input-Feld mit dem Type *$type* hinzu. Alle Methoden, welche Felder hinzufügen, rufen *addInputField* auf. Wird nur im Ausnahmefall direkt benötigt.
 
-<a name="addtextfield"></a>
-
-#### addTextField
-
-`addTextField($name, $value = null, array $attributes = [])` 
-
-Fügt dem Formular ein Text-Feld hinzu. Beispiel: `$field = $form->addTextField('vorname');` erzeugt ein Input-Feld für das Datenbankfeld *vorname*.
 
 <a name="addreadonlytextfield"></a>
 
@@ -249,6 +243,24 @@ $field->setLabel('Getränk');
 $field->addOption ('Bier (0,33l)', 'bier_033');
 $field->addOption ('Limo (0,5l)', 'limo_05');
 ```
+
+<a name="addtextfield"></a>
+#### addTextField
+
+Fügt dem Formular ein Text-Feld hinzu. 
+
+Beispiel: `$field = $form->addTextField('vorname');` erzeugt ein Input-Feld für das Datenbankfeld *vorname*.
+
+`addTextField($name, $value = null, array $attributes = [])`
+
+Textfeld mit html5-Typ datetime-local
+
+```php
+$field = $form->addTextField('startdate');
+$field->setAttribute('type', 'datetime-local');
+$field->setLabel(rex_i18n::msg('sh_wahl_config_startdate_label'));
+```
+
 
 <a name="addtextareafield"></a>
 

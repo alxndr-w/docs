@@ -11,6 +11,7 @@
   + [Developer - Module, Templates und Aktionen syncen](#developer)
   + [ICEcoder](#icecoder)
   + [Project - Schnell mal eine PHP-Class einbinden](#project)
+  + [rexstan](#rexstan)
   + [Theme - Verwalten aller Projektdateien für Frontend und Backend](#theme)
   + [YConverter - Migration REDAXO 4.x zu 5.x](#yconverter)
   + [YTraduko - Übersetzungshelfer](#ytraduko)
@@ -57,7 +58,7 @@ Mit MBlock lassen sich Module erstellen, die mehrere gleichartige Inhaltselement
 
 ### Quick Navigation
 
-Das AddOn ermöglicht den schnellen Zugriff auf die ganze Struktur im Backend. Es sollte in keinem Projekt fehlen mit einem Umfang von mehr als zwei Seiten.
+Das AddOn ermöglicht den schnellen Zugriff auf die ganze Struktur im Backend. Es sollte in keinem Projekt fehlen, mit einem Umfang von mehr als zwei Seiten.
 
 ### Watson
 
@@ -71,7 +72,7 @@ AddOns, die Erweiterungen für Branchen und spezielle Aufgaben bereitstellen.
 
 ### Aufgaben
 
-Ein Aufgaben Manager, der nicht nur beim Aufbau einer REDAXO Präsentation den Todo Workflow abbilden kann sondern auch für andere Zwecke verwendbar ist.
+Ein Aufgaben-Manager, der nicht nur beim Aufbau einer REDAXO Präsentation den To-do-Workflow abbilden kann, sondern auch für andere Zwecke verwendbar ist.
 
 ### FOR calendar
 
@@ -88,12 +89,6 @@ Ein Aufgaben Manager, der nicht nur beim Aufbau einer REDAXO Präsentation den T
 
 Adminer für REDAXO. Seit Version 1.3.0 kann der `rex_sql_table` code für die ausgewählte Tabelle in der Tabellenstruktur generiert werden. Sehr hilfreich bei der AddOn-Erstellung für die install.php.
 
-<a name="developer"></a>
-
-### Developer
-
-Developer synchronisiert Module und Templates in das Dateisystem. So können Module und Templates direkt über einen Dateieditor bearbeitet werden, statt über das REDAXO-Backend.
-
 <a name="cheatsheet"></a>
 
 ### Cheatsheet
@@ -106,7 +101,7 @@ Das Cheatsheet-AddOn scant die REDAXO-Installation nach Extension-Points im Core
 
 ### Demo-AddOn
 
-Das Demo-AddOn zeigt wie AddOns entwickelt und dokumentiert werden. Gut kommentierter Quellcode, Hilfe und Hints im AddOn selbst helfen beim Verständnis der AddOn-Programmierung und der Dokumentation. Es liefert auch ein Doku-Plugin, das den Aufbau einer Hilfe für das eigne AddOn ermöglicht.
+Das Demo-AddOn zeigt, wie AddOns entwickelt und dokumentiert werden. Gut kommentierter Quellcode, Hilfe und Tipps im AddOn selbst helfen beim Verständnis der AddOn-Programmierung und der Dokumentation. Es liefert auch ein Doku-Plugin, das den Aufbau einer Hilfe für das eigne AddOn ermöglicht.
 
 [**Github-Repo**](https://github.com/FriendsOfREDAXO/demo_addon)
 
@@ -114,7 +109,7 @@ Das Demo-AddOn zeigt wie AddOns entwickelt und dokumentiert werden. Gut kommenti
 
 ### Developer
 
-Developer kopiert und synct Module, Templates und Aktionen zwischen Dateisystem und Datenbank, So können diese direkt über einen Dateieditor oder per FTP bearbeitet werden, statt über das REDAXO-Backend.
+Developer kopiert und synct Module, Templates und Aktionen zwischen Dateisystem und Datenbank, so können diese direkt über einen Dateieditor oder per FTP bearbeitet werden, statt über das REDAXO-Backend.
 
 <a name="icecoder"></a>
 
@@ -127,6 +122,13 @@ ICEcoder ist ein Web-IDE / browserbasierter Code-Editor, der durch Plugins erwei
 ### Project
 
 In REDAXO bereits vorhanden, ist das Project-AddOn. Hier können einfach eigene PHP-Classes und Assets eingebunden werden, die nach einem Update nicht gelöscht werden. Man erspart sich so also die Entwicklung eines eigenen AddOns, wenn man das System einfach nur mit einer PHP-Class bereichern möchte.
+
+<a name="project"></a>
+
+### rexstan
+
+PHPStan CLI-Version und GUI für REDAXO. PHPStan ist ein statisches Analyse-Werkzeug für PHP-Code. Es versucht, mögliche Fehler und Probleme in PHP-Code zu finden, indem es den Code analysiert, ohne ihn tatsächlich auszuführen. PHPStan verwendet Typinformationen und andere Informationen, um mögliche Probleme im Code zu identifizieren und dem Entwickler mitzuteilen. Es kann bei der Entwicklung hilfreich sein, da es mögliche Fehler frühzeitig aufspüren kann, bevor sie zu größeren Problemen werden. 
+
 
 <a name="theme"></a>
 
@@ -154,7 +156,7 @@ Ytraduko hilft bei der Übersetzung der eigenen AddOns. Anstelle selbst für die
 
 ### ZIP-Install
 
-Das ZIP-Install ermöglicht es gezippte AddOns ohne Umweg per FTP auf den Server zu laden und zu entpacken. Ganz praktisch vor allem, wenn es sich um AddOns handelt, die es nur als GitHub-Repo gibt und nicht im Installer zur Vefügung stehen.  
+Das ZIP-Install ermöglicht es gezippte AddOns, ohne Umweg per FTP auf den Server zu laden und zu entpacken. Ganz praktisch vor allem, wenn es sich um AddOns handelt, die es nur als GitHub-Repo gibt und nicht im Installer zur Vefügung stehen.  
 
 <a name="workflows"></a>
 
@@ -174,6 +176,6 @@ Frontendentwicklung wird immer aufwändiger, SCSS wollen kompiliert werden, Bild
 
 ### REDAXO mit Docker
 
-REDAXO kann leicht, systemunabhängig mit Docker verwendet werden. Die Vorteile: Möglichkeit der zentralen Installation und Bearbeitung, Versionierbarkeit, Ausbaufähigkeit. REDAXO-mit-Docker liefert alle Ressourcen und eine einsteigergeignete Anleitung. Und damit man nicht bei Null anfangen muss, kann eine Demo gleich automatisiert installiert werden. ***REDAXO mit Docker und Bimmelbam*** sind übrigens leicht miteinander kombinierbar. Weitere Infos in den jeweiligen REPOS.
+REDAXO kann leicht, systemunabhängig, mit Docker verwendet werden. Die Vorteile: Möglichkeit der zentralen Installation und Bearbeitung, Versionierbarkeit, Ausbaufähigkeit. REDAXO-mit-Docker liefert alle Ressourcen und eine einsteigergeignete Anleitung. Und damit man nicht bei null anfangen muss, kann eine Demo gleich automatisiert installiert werden. ***REDAXO mit Docker und Bimmelbam*** sind übrigens leicht miteinander kombinierbar. Weitere Informationen in den jeweiligen REPOS.
 
 [**GitHub-Repo**](https://github.com/FriendsOfREDAXO/redaxo-mit-docker)

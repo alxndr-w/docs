@@ -11,6 +11,7 @@
     - [addTableAttribute](#addtableattribute)
     - [addTableColumnGroup](#addtablecolumngroup)
     - [getColumnLabel](#getcolumnlabel)
+    - [setColumnLabel](#setcolumnlabel)
     - [getHeader()](#getheader)
     - [getUrl](#geturl)
     - [getParsedUrl](#getparsedurl)
@@ -132,6 +133,10 @@ $list->addTableColumnGroup([ ['class' => 'classname-a'], ['class' => 'classname-
 
 `getColumnLabel( string $columnName, mixed $default = null )` 
 
+<a name="setcolumnlabel"></a>
+
+#### setColumnLabel
+
 Mit der Methode *setColumnLabel* bekommen die Tabellenspalten eine aussagekräftige Bezeichnung.
 Beispiel: `$list->setColumnLabel('name', 'Name des Teilnehmers');` überschreibt die Tabellenspalte *name* mit *Name des Teilnehmers*
 
@@ -158,7 +163,7 @@ Erstellt eine URL für die aktuelle Seite. Kann verwendet werden, um ein Formula
 
 `getParsedUrl(array $params = [], boolean $escape = true)` 
 
-Erstellt eine URL für die aktuelle Seite. Der URL werden die Standard-rexList-Variablen (z. B. *sort*, *sorttype*) hinzugefügt. Kann verwendet werden, um ein Formular aufzurufen:
+Erstellt eine URL für die aktuelle Seite. Der URL werden die Standard-rex_list-Variablen (z. B. *sort*, *sorttype*) hinzugefügt. Kann verwendet werden, um ein Formular aufzurufen:
 `echo '<a href="'.$list->getParsedUrl(['func'=>'add']).'">Hinzufügen</a>';` 
 
 <a name="removecolumn"></a>
@@ -221,7 +226,7 @@ Als Parameter können auch Platzhalter in der Form *###fieldname###* gesetzt wer
 
 `setColumnParams(string $columnName, array $params = [])` 
 
-Verlinkt eine Spalte mit den übergebenen Parametern. `$list->setColumnParams('name', ['func' => 'edit', 'id' => '###id###', 'start' => rex_request('start','int',0) ]);` Dadurch erhält jeder Wert in der Spalte `name` einen Link mit dem Parametern *?func=edit&id=999&start=990*. Die Verarbeitung muss durch die Applikation durchgeführt werden.
+Verlinkt eine Spalte mit den übergebenen Parametern. `$list->setColumnParams('name', ['func' => 'edit', 'id' => '###id###', 'start' => rex_request('start','int',0) ]);` Dadurch erhält jeder Wert in der Spalte `name` einen Link mit dem Parametern `?func=edit&id=999&start=990`. Die Verarbeitung muss durch die Applikation durchgeführt werden.
 
 <a name="setcolumnsortable"></a>
 
